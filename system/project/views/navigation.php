@@ -11,7 +11,7 @@
     <a href="<?php echo url::to('Register'); ?>">Register a new account</a>
     <?php if (isset($_SESSION['user_id'])): ?><a href="<?php echo url::to('logout'); ?>"><strong>Log out</strong></a><?php else : ?>
     <a href="<?php echo url::to('login'); ?>"><strong>Log in</strong></a><?php endif; ?>
-    <a href="<?php echo url::to('admin'); ?>">Admin Panel</a> <br>
+    <?php if (isset($_SESSION['user_id']) && $_SESSION['user_id'] == 1): ?><a href="<?php echo url::to('admin'); ?>">Admin Panel</a> <br><?php endif; ?>
     <?php if (isset($_SESSION['user_id'])): ?><span>You are logged in with email: <strong><?php echo $_SESSION['user_email'] ?><?php endif; ?></strong></span>
     </div>
 

@@ -9,7 +9,11 @@
                 description: <br>
                 <?php echo $product->description; ?><br><br>
                 Amount left in stock: <?php echo $product->amount_in_stock; ?>
-                <form><input type="hidden" name="id" value="<?php echo $product->id; ?>"> <input type="text" name="amount" value="1"><input type="submit" name="buy" value="buy now!"></form>
-            </li>
+                <form action="" method="post">
+                <input type="hidden" name="product_id" value="<?php echo $product->id; ?>"> 
+                <input type="text" name="amount" value="1">
+                <input type="submit" name="buy" value="buy now!">
+                </form>                
+            </li> <br><br> <hr> <br>
         <?php endforeach; ?>
     </ul>

@@ -1,18 +1,18 @@
 <?php
 
+$product_id = request::post('product_id', '');
+
+var_dump($product_id);
+if($_POST) {
+	$_SESSION['products'][] = $product_id;
+	header('location:http://www.eshop.local');	
+} 
+
 //products showcase
 $general_information = new view('products/general_information');
 
 $all_products = new view('products/AllProductsFull');
 $all_products->products = Product_Model::getProducts();
-
-if($_POST) {
-	if(!isset($_SESSION['products'])) {
-		$_SESSION['products'] = [];
-	}
-	$_SESSION['products'][] = $_POST['id'];
-	header('location:http://www.eshop.local');
-}
 
 //Page_layout 
 $page_layout = new view('products/page_layout');

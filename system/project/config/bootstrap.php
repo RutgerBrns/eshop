@@ -1,7 +1,9 @@
 <?php
 
 session_start();
-
+if(!isset($_SESSION['products'])) {
+		$_SESSION['products'] = [];
+	}
 // system folder
 define('SYSTEM_DIR', DOCROOT.'/system');
 
