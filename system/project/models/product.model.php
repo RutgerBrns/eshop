@@ -23,20 +23,19 @@ class Product_Model extends model
         return $objects;
     }
 
-    /*
-    //I AM TRYING TO BUILD AN INSERT QUERY HERE TO CREATE NEW TASKS.
-    public static function createProduct($task_name, $task_description)
+    public static function addProduct($product_name, $product_description, $product_price, $unit_qty, $amount_in_stock, $is_top)
     {
+
         // write query
         $query = "
-            INSERT INTO `tasks` (task_name, task_description)
-            VALUES (?, ?)
+            INSERT INTO `product` ('name, description, price, unit_qty, amount_in_stock, is_top') 
+            VALUES (?, ?, ?, ?, ?, ?)
         ";
 
-        db::query($query,[$task_name, $task_description]);
-        
+        //let op dat de gegevens dienen te worden aangeleverd in een array vorm [variabelen]
+        db::query($query, [$product_name, $product_description, $product_price, $unit_qty, $amount_in_stock, $is_top]);        
+    
     }
-    */
 
    
 }
